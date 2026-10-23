@@ -1,13 +1,18 @@
-# CareersProject
+# CareerVerse AI — Full-Stack AI Career Platform
+
+CareerVerse AI is a full-stack career development platform designed to help users analyze resumes, evaluate ATS compatibility, match job descriptions, improve resume content, and prepare for interviews using AI-powered services.
+
+## Project Structure
+
 careerverse-ai/
 │
 ├── frontend/                                  # React + Tailwind
 │   ├── public/
 │   ├── src/
 │   │   ├── api/
-│   │   │   └── axios.js                       # ✅ built — axios instance + JWT interceptor
+│   │   │   └── axios.js                       # Axios instance + JWT interceptor
 │   │   ├── components/
-│   │   │   ├── ProtectedRoute.jsx              # ✅ built
+│   │   │   ├── ProtectedRoute.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── ResumeUploadCard.jsx
 │   │   │   ├── AtsScoreBreakdown.jsx
@@ -25,8 +30,8 @@ careerverse-ai/
 │   │   │   ├── InterviewPage.jsx
 │   │   │   └── TimelinePage.jsx
 │   │   ├── context/
-│   │   │   └── AuthContext.jsx                 # ✅ built
-│   │   ├── App.jsx                             # ✅ built
+│   │   │   └── AuthContext.jsx
+│   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── package.json
 │   ├── vite.config.js
@@ -35,7 +40,7 @@ careerverse-ai/
 ├── backend/                                   # Java + Spring Boot
 │   ├── src/main/java/com/careerverse/
 │   │   ├── controller/
-│   │   │   ├── AuthController.java             # ✅ built
+│   │   │   ├── AuthController.java
 │   │   │   ├── ResumeController.java
 │   │   │   ├── AtsScoreController.java
 │   │   │   ├── JobDescriptionController.java
@@ -45,17 +50,17 @@ careerverse-ai/
 │   │   │   ├── InterviewController.java
 │   │   │   └── TimelineController.java
 │   │   ├── service/
-│   │   │   ├── AuthService.java                # ✅ built
+│   │   │   ├── AuthService.java
 │   │   │   ├── ResumeService.java
 │   │   │   ├── AtsScoreService.java
 │   │   │   ├── JdMatchService.java
 │   │   │   ├── RewriteService.java
 │   │   │   ├── CoachService.java
 │   │   │   ├── InterviewService.java
-│   │   │   ├── TimelineService.java            # shared writer used by every other service
-│   │   │   └── AiServiceClient.java            # REST client → ai-service
+│   │   │   ├── TimelineService.java
+│   │   │   └── AiServiceClient.java
 │   │   ├── repository/
-│   │   │   ├── UserRepository.java             # ✅ built
+│   │   │   ├── UserRepository.java
 │   │   │   ├── ResumeRepository.java
 │   │   │   ├── AtsScoreRepository.java
 │   │   │   ├── JobDescriptionRepository.java
@@ -66,8 +71,8 @@ careerverse-ai/
 │   │   │   ├── CareerTimelineRepository.java
 │   │   │   └── CoachSuggestionRepository.java
 │   │   ├── model/                              # JPA entities
-│   │   │   ├── Role.java                       # ✅ built
-│   │   │   ├── User.java                       # ✅ built
+│   │   │   ├── Role.java
+│   │   │   ├── User.java
 │   │   │   ├── Resume.java
 │   │   │   ├── AtsScore.java
 │   │   │   ├── JobDescription.java
@@ -78,10 +83,10 @@ careerverse-ai/
 │   │   │   ├── CareerTimeline.java
 │   │   │   └── CoachSuggestion.java
 │   │   ├── security/
-│   │   │   ├── JwtUtil.java                    # ✅ built
-│   │   │   └── JwtAuthFilter.java              # ✅ built
+│   │   │   ├── JwtUtil.java
+│   │   │   └── JwtAuthFilter.java
 │   │   ├── dto/
-│   │   │   ├── AuthDtos.java                   # ✅ built
+│   │   │   ├── AuthDtos.java
 │   │   │   ├── ResumeDtos.java
 │   │   │   ├── AtsScoreDtos.java
 │   │   │   ├── JdMatchDtos.java
@@ -89,42 +94,79 @@ careerverse-ai/
 │   │   │   ├── InterviewDtos.java
 │   │   │   └── TimelineDtos.java
 │   │   └── config/
-│   │       └── SecurityConfig.java             # ✅ built
+│   │       └── SecurityConfig.java
 │   ├── src/main/resources/
-│   │   └── application.properties              # ✅ built
-│   └── pom.xml                                 # ✅ built
+│   │   └── application.properties
+│   └── pom.xml
 │
 ├── ai-service/                                 # Python + FastAPI
 │   ├── app/
 │   │   ├── routers/
-│   │   │   ├── parse_resume.py                 # ✅ built (template)
+│   │   │   ├── parse_resume.py
 │   │   │   ├── ats_score.py
 │   │   │   ├── match_jd.py
 │   │   │   ├── rewrite.py
 │   │   │   ├── interview.py
 │   │   │   └── coach.py
 │   │   ├── services/
-│   │   │   ├── openai_client.py                # ✅ built
-│   │   │   ├── prompts.py                      # prompt templates, kept out of routers
+│   │   │   ├── openai_client.py
+│   │   │   ├── prompts.py
 │   │   │   └── ...
 │   │   ├── models/
-│   │   │   └── schemas.py                      # shared Pydantic request/response models
-│   │   └── main.py                             # ✅ built
+│   │   │   └── schemas.py
+│   │   └── main.py
 │   ├── requirements.txt
-│   └── Dockerfile                              # optional, for EC2 deploy
+│   └── Dockerfile
 │
 ├── database/
-│   └── schema.sql                              # ✅ built
+│   └── schema.sql
 │
 ├── docs/
-│   ├── api-contract.md                         # ✅ built
-│   ├── db-schema.md                            # plain-English notes on schema.sql
-│   └── feature-ownership.md                    # who owns which feature vertical
+│   ├── api-contract.md
+│   ├── db-schema.md
+│   └── feature-ownership.md
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                              # ✅ built
+│       └── ci.yml
 │
-├── .env.example                                # ✅ built
+├── .env.example
 ├── .gitignore
 └── README.md
+```
+
+## Technology Stack
+
+- **Frontend:** React.js, Tailwind CSS, Vite
+- **Backend:** Java, Spring Boot, Spring Security
+- **AI Service:** Python, FastAPI, OpenAI API
+- **Database:** MySQL
+- **Authentication:** JWT
+- **DevOps:** GitHub Actions, Docker, AWS (if configured)
+
+## Core Features
+
+- User registration and authentication
+- Resume upload and analysis
+- ATS score evaluation and breakdown
+- Job description matching
+- AI-powered resume rewriting
+- Personalized career coaching
+- Interview preparation
+- Career timeline tracking
+
+## Getting Started
+
+Refer to the frontend, backend, and AI service directories for component-specific setup instructions.
+
+Configure the required environment variables using `.env.example`. Do not commit API keys, passwords, or other secrets.
+
+## Project Status
+
+Under development.
+
+## Future Enhancements
+
+- Improved resume analysis and job recommendations
+- Expanded interview assessment features
+- Automated testing and deployment
