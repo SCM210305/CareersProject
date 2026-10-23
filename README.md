@@ -3,7 +3,7 @@
 CareerVerse AI is a full-stack career development platform designed to help users analyze resumes, evaluate ATS compatibility, match job descriptions, improve resume content, and prepare for interviews using AI-powered services.
 
 ## Project Structure
-
+```text
 careerverse-ai/
 │
 ├── frontend/                                  # React + Tailwind
